@@ -1,8 +1,13 @@
+"use client"
+
 import { FC } from "react";
+
+import { Canvas } from "@react-three/fiber";
 
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
+import { Scene } from "@/slices/Hero/Scene";
 import { Bounded } from "@/components/Bounded";
 
 /**
@@ -21,7 +26,9 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       className="text-white relative h-dvh text-shadow-black/30 text-shadow-lg blue-gradient-bg"
     >
       <div className="hero-scene sticky pointer-events-none top-0 h-dvh w-full">
-        {/* Canvas goes here */}
+        <Canvas shadows="soft">
+          <Scene />
+        </Canvas>
       </div>
 
       <div className="hero-content absolute inset-x-0 top-0 h-dvh">
