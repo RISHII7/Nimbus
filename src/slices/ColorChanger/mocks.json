@@ -1,0 +1,31 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Mysterious"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliqua et laboris consequat. Consequat nulla pariatur velit reprehenderit cillum eu labore minim. Ea et nulla elit do voluptate cillum est."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
