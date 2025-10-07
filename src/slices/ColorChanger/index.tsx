@@ -30,6 +30,7 @@ const ColorChanger: FC<ColorChangerProps> = ({ slice }) => {
   function handleTextureSelect(texture: KeycapTexture) {
     if (texture.id === selectedTextureId || isAnimating) return;    
 
+    setIsAnimating(true);
     setSelectedTextureId(texture.id);
     setBackgroundText(
       KEYCAP_TEXTURES.find((t) => t.id === texture.id)?.name || "",
