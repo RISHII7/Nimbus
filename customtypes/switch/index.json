@@ -1,0 +1,31 @@
+{
+  "format": "custom",
+  "id": "switch",
+  "label": "Switch",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
+      "color": {
+        "type": "Color",
+        "config": {
+          "label": "Hex Color",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

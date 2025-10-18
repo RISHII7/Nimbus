@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "switch_playground": {
+              "type": "SharedSlice"
+            },
             "color_changer": {
               "type": "SharedSlice"
             },
