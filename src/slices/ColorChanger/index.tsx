@@ -44,6 +44,7 @@ const ColorChanger: FC<ColorChangerProps> = ({ slice }) => {
 
   return (
     <section
+      id="keycap-changer"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="relative flex h-[90vh] min-h-[1000px] flex-col overflow-hidden bg-linear-to-br from-[#0f172a] to-[#062f4a] text-white"

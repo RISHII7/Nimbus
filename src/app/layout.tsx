@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 import { Roboto_Flex } from "next/font/google";
 import "./globals.css";
 
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName } from "@/prismicio";
+
+import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Nav-bar";
+
 const robotoFlex = Roboto_Flex({
   variable: "--font-roboto-flex",
   subsets: ["latin"],
   display: "swap",
-  axes: ["wdth", "slnt", "opsz"]
+  axes: ["wdth", "slnt", "opsz"],
 });
 
 export const metadata: Metadata = {
@@ -22,8 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${robotoFlex.variable} antialiased`}>
-        {children}
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
+      <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
 }

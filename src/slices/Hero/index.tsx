@@ -14,7 +14,7 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
 import { Scene } from "@/slices/Hero/Scene";
 import { Bounded } from "@/components/Bounded";
-// import { Loader } from "@/components/Loader";
+import { Loader } from "@/components/Loader";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
@@ -38,7 +38,7 @@ function LoaderWrapper() {
         isLoading ? "opacity-100" : "pointer-events-none opacity-0",
       )}
     >
-      {/* <Loader /> */}
+      <Loader />
     </div>
   );
 }
