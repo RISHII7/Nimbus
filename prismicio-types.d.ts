@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomepageDocumentDataSlicesSlice =
+  | PurchaseButtonSlice
   | MarqueeSlice
   | SwitchPlaygroundSlice
   | ColorChangerSlice
@@ -458,6 +459,81 @@ export type MarqueeSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *PurchaseButton → Default → Primary*
+ */
+export interface PurchaseButtonSliceDefaultPrimary {
+  /**
+   * Eyebrow field in *PurchaseButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: purchase_button.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Heading field in *PurchaseButton → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: purchase_button.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Button Text field in *PurchaseButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: purchase_button.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Body field in *PurchaseButton → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: purchase_button.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+}
+
+/**
+ * Default variation for PurchaseButton Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PurchaseButtonSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PurchaseButtonSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PurchaseButton*
+ */
+type PurchaseButtonSliceVariation = PurchaseButtonSliceDefault;
+
+/**
+ * PurchaseButton Shared Slice
+ *
+ * - **API ID**: `purchase_button`
+ * - **Description**: PurchaseButton
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PurchaseButtonSlice = prismic.SharedSlice<
+  "purchase_button",
+  PurchaseButtonSliceVariation
+>;
+
+/**
  * Item in *SwitchPlayground → Default → Primary → Switches*
  */
 export interface SwitchPlaygroundSliceDefaultPrimarySwitchesItem {
@@ -586,6 +662,10 @@ declare module "@prismicio/client" {
       MarqueeSliceDefaultPrimary,
       MarqueeSliceVariation,
       MarqueeSliceDefault,
+      PurchaseButtonSlice,
+      PurchaseButtonSliceDefaultPrimary,
+      PurchaseButtonSliceVariation,
+      PurchaseButtonSliceDefault,
       SwitchPlaygroundSlice,
       SwitchPlaygroundSliceDefaultPrimarySwitchesItem,
       SwitchPlaygroundSliceDefaultPrimary,
