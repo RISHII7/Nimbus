@@ -1,0 +1,46 @@
+{
+  "id": "marquee",
+  "type": "SharedSlice",
+  "name": "Marquee",
+  "description": "Marquee",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "direction": {
+          "type": "Select",
+          "config": {
+            "label": "Direction",
+            "placeholder": "",
+            "options": [
+              "Left",
+              "Right"
+            ]
+          }
+        },
+        "phrases": {
+          "type": "Group",
+          "config": {
+            "label": "Phrases",
+            "repeat": true,
+            "fields": {
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Text",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

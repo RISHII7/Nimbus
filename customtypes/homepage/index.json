@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "marquee": {
+              "type": "SharedSlice"
+            },
             "switch_playground": {
               "type": "SharedSlice"
             },
