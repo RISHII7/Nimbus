@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomepageDocumentDataSlicesSlice =
+  | MarqueeSlice
   | SwitchPlaygroundSlice
   | ColorChangerSlice
   | BentoBoxSlice
@@ -387,6 +388,76 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *Marquee → Default → Primary → Phrases*
+ */
+export interface MarqueeSliceDefaultPrimaryPhrasesItem {
+  /**
+   * Text field in *Marquee → Default → Primary → Phrases*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: marquee.default.primary.phrases[].text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Marquee → Default → Primary*
+ */
+export interface MarqueeSliceDefaultPrimary {
+  /**
+   * Direction field in *Marquee → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: marquee.default.primary.direction
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  direction: prismic.SelectField<"Left" | "Right">;
+
+  /**
+   * Phrases field in *Marquee → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: marquee.default.primary.phrases[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  phrases: prismic.GroupField<Simplify<MarqueeSliceDefaultPrimaryPhrasesItem>>;
+}
+
+/**
+ * Default variation for Marquee Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type MarqueeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MarqueeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Marquee*
+ */
+type MarqueeSliceVariation = MarqueeSliceDefault;
+
+/**
+ * Marquee Shared Slice
+ *
+ * - **API ID**: `marquee`
+ * - **Description**: Marquee
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type MarqueeSlice = prismic.SharedSlice<
+  "marquee",
+  MarqueeSliceVariation
+>;
+
+/**
  * Item in *SwitchPlayground → Default → Primary → Switches*
  */
 export interface SwitchPlaygroundSliceDefaultPrimarySwitchesItem {
@@ -510,6 +581,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      MarqueeSlice,
+      MarqueeSliceDefaultPrimaryPhrasesItem,
+      MarqueeSliceDefaultPrimary,
+      MarqueeSliceVariation,
+      MarqueeSliceDefault,
       SwitchPlaygroundSlice,
       SwitchPlaygroundSliceDefaultPrimarySwitchesItem,
       SwitchPlaygroundSliceDefaultPrimary,
