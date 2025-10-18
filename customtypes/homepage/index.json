@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "purchase_button": {
+              "type": "SharedSlice"
+            },
             "marquee": {
               "type": "SharedSlice"
             },
