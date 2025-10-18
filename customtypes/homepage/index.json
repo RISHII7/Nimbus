@@ -11,6 +11,21 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "purchase_button": {
+              "type": "SharedSlice"
+            },
+            "marquee": {
+              "type": "SharedSlice"
+            },
+            "switch_playground": {
+              "type": "SharedSlice"
+            },
+            "color_changer": {
+              "type": "SharedSlice"
+            },
+            "bento_box": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             }

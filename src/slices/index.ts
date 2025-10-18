@@ -3,5 +3,10 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  bento_box: dynamic(() => import("./BentoBox")),
+  color_changer: dynamic(() => import("./ColorChanger")),
   hero: dynamic(() => import("./Hero")),
+  marquee: dynamic(() => import("./Marquee")),
+  purchase_button: dynamic(() => import("./PurchaseButton")),
+  switch_playground: dynamic(() => import("./SwitchPlayground")),
 };
